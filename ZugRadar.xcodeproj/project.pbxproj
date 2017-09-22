@@ -10,6 +10,9 @@
 		C680D2E61F753A6F00A98D31 /* ZugRadar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C680D2DC1F753A6F00A98D31 /* ZugRadar.framework */; };
 		C680D2EB1F753A6F00A98D31 /* ZugRadarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680D2EA1F753A6F00A98D31 /* ZugRadarTests.swift */; };
 		C680D2ED1F753A6F00A98D31 /* ZugRadar.h in Headers */ = {isa = PBXBuildFile; fileRef = C680D2DF1F753A6F00A98D31 /* ZugRadar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6CE71A91F753B120066D176 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE71A81F753B120066D176 /* Parser.swift */; };
+		C6CE71AA1F753CE60066D176 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C6CE71A71F753AF80066D176 /* data.json */; };
+		C6CE71AB1F753CE60066D176 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C6CE71A71F753AF80066D176 /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,8 @@
 		C680D2E51F753A6F00A98D31 /* ZugRadarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZugRadarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C680D2EA1F753A6F00A98D31 /* ZugRadarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZugRadarTests.swift; sourceTree = "<group>"; };
 		C680D2EC1F753A6F00A98D31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6CE71A71F753AF80066D176 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = SOURCE_ROOT; };
+		C6CE71A81F753B120066D176 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +76,10 @@
 		C680D2DE1F753A6F00A98D31 /* ZugRadar */ = {
 			isa = PBXGroup;
 			children = (
+				C6CE71A71F753AF80066D176 /* data.json */,
 				C680D2DF1F753A6F00A98D31 /* ZugRadar.h */,
 				C680D2E01F753A6F00A98D31 /* Info.plist */,
+				C6CE71A81F753B120066D176 /* Parser.swift */,
 			);
 			path = ZugRadar;
 			sourceTree = "<group>";
@@ -148,6 +155,7 @@
 				TargetAttributes = {
 					C680D2DB1F753A6F00A98D31 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					C680D2E41F753A6F00A98D31 = {
@@ -179,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CE71AB1F753CE60066D176 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CE71AA1F753CE60066D176 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CE71A91F753B120066D176 /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +345,7 @@
 		C680D2F11F753A6F00A98D31 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -346,6 +358,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dbsystel.ZugRadar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +367,7 @@
 		C680D2F21F753A6F00A98D31 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -374,6 +388,7 @@
 		C680D2F41F753A6F00A98D31 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ZugRadarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,6 +402,7 @@
 		C680D2F51F753A6F00A98D31 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ZugRadarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
