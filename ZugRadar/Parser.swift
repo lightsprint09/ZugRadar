@@ -22,6 +22,10 @@
 
 import Foundation
 
+public class ZugRadar {
+    
+}
+
 public struct Location {
     public let latitude: Double
     public let longitude: Double
@@ -37,6 +41,7 @@ public struct Train {
 public func parse(data: Data) -> [Train] {
     let array = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [Any]
     
+    //let ice = parseHighSpeedTrains(data: array[0] as! [[Any]])
     let values = array[1] as! [[String: Any]]
     
     return values.map { value in
@@ -56,6 +61,20 @@ public func parse(data: Data) -> [Train] {
         return Train(id: id, name: name, location: location)
     }
     
-    
+}
+
+func parseHighSpeedTrains(data: [[Any]]) -> [Train] {
+    var cleanData = data
+    cleanData.popLast()
+    return cleanData.map { value in
+        let id = value[3] as! String
+        let name = value[0] as! String
+        let longitude = (value[1] as! Double) / 1000000
+        let latitude = (value[2] as! Double) / 1000000
+        
+        let location = Location(latitude: latitude, longitude: longitude)
+        return Train(id: id, name: name, location: location)
+        
+    }
 }
 
